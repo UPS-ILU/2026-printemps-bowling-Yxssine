@@ -1,0 +1,47 @@
+package tdd;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+public class GameTest {
+
+    @Test
+    public void testScoreVide() {
+        Game game = new Game();
+        assertEquals(0, game.score());
+    }
+
+    @Test
+    public void testToutZero() {
+        Game game = new Game();
+
+        for (int i = 0; i < 20; i++) {
+            game.roll(0);
+        }
+
+        assertEquals(0, game.score());
+    }
+
+    @Test
+    public void testToutUn() {
+        Game game = new Game();
+
+        for (int i = 0; i < 20; i++) {
+            game.roll(1);
+        }
+
+        assertEquals(20, game.score());
+    }
+
+    @Test
+    public void testDixFoisUnPuisDixFoisDeux() {
+        Game game = new Game();
+
+        for (int i = 0; i < 10; i++) {
+            game.roll(1);
+            game.roll(2);
+        }
+
+        assertEquals(30, game.score());
+    }
+}
