@@ -8,11 +8,12 @@ public class GameTest {
     @Test
     public void testScoreVide() {
         Game game = new Game();
+
         assertEquals(0, game.score());
     }
 
     @Test
-    public void testToutZero() {
+    public void test20Fois0() {
         Game game = new Game();
 
         for (int i = 0; i < 20; i++) {
@@ -23,7 +24,7 @@ public class GameTest {
     }
 
     @Test
-    public void testToutUn() {
+    public void test20Fois1() {
         Game game = new Game();
 
         for (int i = 0; i < 20; i++) {
@@ -34,11 +35,14 @@ public class GameTest {
     }
 
     @Test
-    public void testDixFoisUnPuisDixFoisDeux() {
+    public void test10Fois1Puis10Fois2() {
         Game game = new Game();
 
         for (int i = 0; i < 10; i++) {
             game.roll(1);
+        }
+
+        for (int i = 0; i < 10; i++) {
             game.roll(2);
         }
 
